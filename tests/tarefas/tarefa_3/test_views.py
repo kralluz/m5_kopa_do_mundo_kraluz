@@ -3,6 +3,7 @@ from teams.models import Team
 from rest_framework.views import status
 
 
+
 class CreateTeamTest(APITestCase):
     @classmethod
     def setUpTestData(cls) -> None:

@@ -1,6 +1,10 @@
 import unittest
 from utils import data_processing
-from exceptions import *
+from exceptions import (
+    NegativeTitlesError,
+    InvalidYearCupError,
+    ImpossibleTitlesError
+)
 
 
 class TestDataProcessing(unittest.TestCase):
@@ -44,7 +48,6 @@ class TestDataProcessing(unittest.TestCase):
 
         self.assertEqual(str(err.exception), 'titles cannot be negative', msg)
 
-
     def test_invalid_year_cup_error(self):
         """
         Testa se a funçao data_processing
@@ -77,8 +80,8 @@ class TestDataProcessing(unittest.TestCase):
         with self.assertRaises(InvalidYearCupError) as err:
             data_processing(data)
 
-        self.assertEqual(str(err.exception), 'there was no world cup this year', msg)
-
+        self.assertEqual(
+            str(err.exception), 'there was no world cup this year', msg)
 
     def test_impossible_titles_error(self):
         """
@@ -99,7 +102,10 @@ class TestDataProcessing(unittest.TestCase):
         with self.assertRaises(ImpossibleTitlesError) as err:
             data_processing(data)
 
-        self.assertEqual(str(err.exception), 'impossible to have more titles than disputed cups', msg)
+        self.assertEqual(
+            str(
+                err.exception
+                ), 'impossible to have more titles than disputed cups', msg)
 
         data = {
             "name": "França",
@@ -113,4 +119,7 @@ class TestDataProcessing(unittest.TestCase):
         with self.assertRaises(ImpossibleTitlesError) as err:
             data_processing(data)
 
-        self.assertEqual(str(err.exception), 'impossible to have more titles than disputed cups', msg)
+        self.assertEqual(
+            str(
+                err.exception
+                ), 'impossible to have more titles than disputed cups', msg)
