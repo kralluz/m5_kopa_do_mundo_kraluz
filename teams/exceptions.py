@@ -11,3 +11,4 @@ class InvalidYearCupError(Exception):
 class ImpossibleTitlesError(Exception):
     def __init(self):
         self.message("impossible to have more titles than disputed cups")
+        
