@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=y@vmpv9($^5(y2)wb3x-=$39ps-%^unm-0d6bgibu%)s+=ly2'
+SECRET_KEY = 'django-insecure-mb_#jluus9fs+c@fk4#o$ntv-(aoj=0qn)3i$d!7+u3y5_yx9u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'rest_framework'
 ]
 
 ROOT_URLCONF = 'kopa_do_mundo.urls'
